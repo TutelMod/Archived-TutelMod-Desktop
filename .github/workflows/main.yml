@@ -188,7 +188,7 @@ jobs:
           cp -R build ../app
           cd ..
           rm -rf app/package.json app/node_modules
-          cd PenguinMod-Home
+          cd TutelMod-Home
           bun run build
           cp -R public ../app
           cd ..
