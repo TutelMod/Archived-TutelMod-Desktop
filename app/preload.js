@@ -103,8 +103,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   <div id="settings-label-node" style="font-size:13px;">
     <label style="display:block; margin-bottom:6px; font-weight:500;">Default Startup Page:</label>
     <select id="startup-page-select" style="width:100%; padding:6px; border-radius:6px; outline:none; transition: background 0.2s ease, color 0.2s ease;">
-      <option value="home">PenguinMod Home Page</option>
-      <option value="editor">PenguinMod Editor</option>
+      <option value="home">TutelMod Home Page</option>
+      <option value="editor">TutelMod Editor</option>
     </select>
   </div>
   `;
@@ -240,8 +240,8 @@ window.addEventListener('DOMContentLoaded', async () => {
       try {
         if (!a.href) continue;
         const url = new URL(a.href, window.location.href);
-        const isPenguinHome = url.host === 'penguinmod.com' || url.protocol === 'home:';
-        const isPenguinEditor = url.host === 'studio.penguinmod.com' || url.protocol === 'editor:';
+        const isPenguinHome = url.host === 'tutelmod.com' || url.protocol === 'home:';
+        const isPenguinEditor = url.host === 'studio.tutelmod.com' || url.protocol === 'editor:';
 
         if (isPenguinHome || isPenguinEditor) {
           if (a.getAttribute('target') !== '_self') {
@@ -294,7 +294,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   overlay.innerHTML = `
   <div id="update-card" style="background: #1c1c1e; color: #f0f0f0; border-radius: 16px; padding: 28px 32px; width: 420px; max-width: 90vw; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
     <div style="font-size:16px; font-weight:600;" id="update-phase-label">Preparing update...</div>
-    <div style="font-size: 11px; color: #8e8e93; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-variant-numeric: tabular-nums;">PenguinMod Desktop will restart when done</div>
+    <div style="font-size: 11px; color: #8e8e93; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-variant-numeric: tabular-nums;">TutelMod Desktop will restart when done</div>
     <div style="background: #3a3a3c; border-radius: 999px; height: 8px; overflow: hidden; width: 100%;"><div id="update-bar" style="height: 100%; width: 0%; background: #007aff; border-radius: 999px; transition: width 0.15s ease;"></div></div>
     <div style="display:flex; justify-content:space-between; font-size:12px; color:#aeaeb2;"><span id="update-pct-label">0%</span><span id="update-indeterminate" style="display:none;">●</span></div>
     <div id="update-status" style="font-size: 11px; color: #8e8e93; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-variant-numeric: tabular-nums;">Starting...</div>
