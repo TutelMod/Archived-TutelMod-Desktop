@@ -152,7 +152,7 @@ jobs:
           cd tutelmod.github.io
           
           git clone --depth=1 https://github.com/TutelMod/TutelMod-Vm.git
-          git clone --depth=1 -b develop-builds https://github.com/TutelMod/TutelMod-Blocks.git
+          git clone --depth=1 https://github.com/TutelMod/TutelMod-Blocks.git
           git clone --depth=1 https://github.com/PenguinMod/PenguinMod-Render.git
           git clone --depth=1 https://github.com/TutelMod/TutelMod-Paint.git
           
