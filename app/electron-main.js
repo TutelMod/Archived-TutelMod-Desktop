@@ -25,6 +25,7 @@ const SETTINGS_FILE = path.join(app.getPath("userData"), "app-settings.json");
 const folders = {
     home: path.join(__dirname, "public"),
     editor: path.join(__dirname, "build"),
+    tutelmod: path.join(__dirname, "TutelMod-ExtensionsGallery"),
     turbowarp: path.join(__dirname, "TurboWarp-ExtensionsGallery"),
     penguinmod: path.join(__dirname, "PenguinMod-ExtensionsGallery"),
     sharkpools: path.join(__dirname, "SharkPools-Extensions"),
@@ -71,6 +72,12 @@ function setStartupSetting(value) {
 function getLocalFile(url) {
     const parsed = new URL(url);
 
+    if (/^https:\/\/extensions\.tutelmod\.com\/.*$/.test(url)) {
+        return path.join(
+            folders.tutelmod,
+            parsed.pathname.replace(/^\/+/, ""),
+        );
+    }
     if (/^https:\/\/extensions\.turbowarp\.org\/.*$/.test(url)) {
         return path.join(
             folders.turbowarp,
@@ -140,8 +147,8 @@ app.whenReady().then(() => {
 
         const originUrl = senderFrame.url;
         if (
-            !originUrl.startsWith("https://penguinmod.com") &&
-            !originUrl.startsWith("https://studio.penguinmod.com")
+            !originUrl.startsWith("https://tutelmod.com") &&
+            !originUrl.startsWith("https://studio.tutelmod.com")
         ) {
             throw new Error(
                 "Security Violation: Unauthorized origin attempt to invoke application updates.",
@@ -383,7 +390,7 @@ app.whenReady().then(() => {
             const url = new URL(request.url);
 
             // 1. Spoof the Editor System
-            if (url.host === "studio.penguinmod.com") {
+            if (url.host === "studio.tutelmod.com") {
                 let filename = url.pathname.replace(/^\/+/, "");
                 if (!filename || filename === "editor.html") filename = "editor.html";
                 
@@ -394,7 +401,7 @@ app.whenReady().then(() => {
             }
 
             // 2. Spoof the Main Dashboard Page
-            if (url.host === "penguinmod.com") {
+            if (url.host === "tutelmod.com") {
                 let filename = url.pathname.replace(/^\/+/, "");
                 if (!filename || filename === "index.html" || filename === "") filename = "index.html";
                 
@@ -404,6 +411,16 @@ app.whenReady().then(() => {
                 }
             }
 
+            if (url.host === "extensions.tutelmod.com") {
+              let filename = url.pathname.replace(/^\/+/, "");
+              if (!filename || filename === "index.html" || filename === "") filename = "index.html";
+
+              const filePath = path.join(folders.penguinmod, filename);
+              if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+                return net.fetch("file://" + filePath);
+              }
+            }
+            
             if (url.host === "extensions.penguinmod.com") {
               let filename = url.pathname.replace(/^\/+/, "");
               if (!filename || filename === "index.html" || filename === "") filename = "index.html";
@@ -463,8 +480,8 @@ app.whenReady().then(() => {
                     parsedUrl.host === "www.youtube.com" ||
                     parsedUrl.host === "www.youtube-nocookie.com"
                 ) {
-                    requestHeaders["Origin"] = "https://penguinmod.com";
-                    requestHeaders["Referer"] = "https://penguinmod.com/";
+                    requestHeaders["Origin"] = "https://tutelmod.com";
+                    requestHeaders["Referer"] = "https://tutelmod.com/";
                 }
             } catch (_) {}
             callback({ requestHeaders });
@@ -498,9 +515,9 @@ function createWindow() {
     // Request the spoofed secure URL configurations
     const startupTarget = getStartupSetting();
     if (startupTarget === "editor") {
-        mainWindow.loadURL("https://studio.penguinmod.com/editor.html");
+        mainWindow.loadURL("https://studio.tutelmod.com/editor.html");
     } else {
-        mainWindow.loadURL("https://penguinmod.com/index.html");
+        mainWindow.loadURL("https://tutelmod.com/index.html");
     }
 
     mainWindow.webContents.on(
