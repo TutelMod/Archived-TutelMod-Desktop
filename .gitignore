@@ -1,11 +1,11 @@
-penguinmod.github.io/
+tutelmod.github.io/
 app/build/
 linux-base
 windows-base
 windows.zip
 linux.zip
-penguinmod-linux.zip
-penguinmod-windows.zip
+tutelmod-linux.zip
+tutelmod-windows.zip
 packager-app
 node_modules
 cache
