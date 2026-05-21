@@ -1,6 +1,7 @@
 # WARNING:
-### This app is currently a work and progress, stabilty is not guaranteed, bugs might occur, and breaking changes might happen!
-### Use at your own risk!
+### This app is forked from PenguinMod, and they have yet to finish the PenguinMod-Desktop app.
+### This has the same unstable things the PenguinMod-Desktop app does.
+### Unless it's actually an issue with TutelMod's desktop app, make an issue in PenguinMod-Desktop!!
 
 # PenguinMod Desktop
 A native [PenguinMod](https://penguinmod.com) desktop app for Linux and Windows that has good offline usage support.
