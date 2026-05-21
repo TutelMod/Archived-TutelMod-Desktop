@@ -6,8 +6,11 @@
 # TutelMod Desktop
 A native [TutelMod](https://tutelmod.com) desktop app for Linux and Windows, great for when you have no internet.
 
-# "How do I download it?"
-Download the latest release, use the correct file for your platform, MacOS is NOT supported right now! There is an updater built into the app(in the settings menu)
+# FAQ:
+
+## "How do I download it?"
+Download the latest release, use the correct file for your platform, MacOS is NOT supported right now.
+There is an updater built into the app (in the settings menu)
 
 ### This app contains the following offline:
   - [TutelMod Editor](https://github.com/TutelMod/tutelmod.github.io)
@@ -18,6 +21,8 @@ Download the latest release, use the correct file for your platform, MacOS is NO
   - [SharkPool's Extensions Gallery](https://github.com/SharkPool-SP/SharkPools-Extensions)
 
 Yes, this app really does contain the four most common extension galleries offline, as long as you use extensions from these three galleries that don't rely on stuff like network requests for functionality, it will load.
+
+# Other Infomation:
 
 Based on [Desk Penguin](https://github.com/TheShovel/Desk-Penguin/) by [TheShovel](https://github.com/TheShovel) and [NodeJs Desk Penguin](https://github.com/FreshPenguin112/NodeJs-Desk-Penguin) by [FreshPenguin112](https://github.com/FreshPenguin112).
 
