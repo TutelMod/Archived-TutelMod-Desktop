@@ -1,7 +1,7 @@
 {
-  "name": "penguinmod-desktop",
-  "author": "FreshPenguin112 <freshpenguin112@gmail.com>",
-  "description": "A desktop version of the PenguinMod home page and editor",
+  "name": "tutelmod-desktop",
+  "author": "TutelMod",
+  "description": "The desktop version of TutelMod!",
   "version": "1.0.0",
   "main": "app/electron-main.js",
   "scripts": {
@@ -10,8 +10,8 @@
     "build:fast": "electron-builder --config.compression=store --publish never --dir"
   },
   "build": {
-    "appId": "com.penguinmod.desktop",
-    "productName": "PenguinMod Desktop",
+    "appId": "com.tutelmod.desktop",
+    "productName": "TutelMod Desktop",
     "directories": {
       "output": "builds"
     },
@@ -27,7 +27,7 @@
     "linux": {
       "compression": "normal",
       "category": "Development",
-      "maintainer": "FreshPenguin112 <freshpenguin112@gmail.com>",
+      "maintainer": "vedal789",
       "target": [
         {
           "target": "AppImage",
@@ -80,7 +80,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "PenguinMod Desktop"
+      "shortcutName": "TutelMod Desktop"
     }
   },
   "devDependencies": {
