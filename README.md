@@ -1,3 +1,23 @@
+# Archival
+PenguinMod has apparently ceased development on their Desktop Application after some backlash on using Generative AI to code it.
+This repo has been archived because of this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # WARNING:
 ### This app is forked from PenguinMod, and they have yet to finish the PenguinMod-Desktop app.
 ### This has the same unstable things the PenguinMod-Desktop app does.
